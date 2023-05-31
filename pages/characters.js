@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
+import { FaSearch } from 'react-icons/fa';
 
 export default function Characters() {
   const [character, setCharacter] = useState('');
@@ -21,7 +22,9 @@ export default function Characters() {
     setSearchString(e.target.value);
   }
 
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault(); // Prevent form submission behavior
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/characters/?name=${searchString}`, {
       method: 'GET'
     });
@@ -36,10 +39,26 @@ export default function Characters() {
       </Head>
       <main>
         <h1 className={styles.title}>Characters</h1>
-        <textarea value={searchString} onChange={handleChange} className="border-2"></textarea>
-        <div>
-          <button onClick={handleSubmit}>Search</button>
+
+
+        <div className={styles.searchContainer}>
+          <form className="example" onSubmit={handleSubmit}>
+            <div className={styles.searchBox}>
+              <input
+                type="text"
+                placeholder="Search.."
+                value={searchString}
+                onChange={handleChange}
+                name="search"
+                className={styles.searchInput}
+              />
+              <button type="submit" className={styles.searchButton}>
+                <FaSearch />
+              </button>
+            </div>
+          </form>
         </div>
+
         <div className={styles.grid}>
           {characters &&
             characters.map((character) => (
