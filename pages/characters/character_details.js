@@ -32,16 +32,16 @@ export default function CharacterDetail() {
       </Head>
       <main>
         <h1>{character.character}</h1>
+
         <div className={styles.grid}>
-          {
-            character.top_conversations.map((character) => (
-              <a href={`/characters/${character.character_id}`} className={styles.card}>
-              <h3> {character.character} </h3>
-              <p> has {character.number_of_lines_together} lines together</p>
+          {character.top_conversations.map((conversation) => (
+            <a key={conversation.character_id} href={`/characters/${conversation.character_id}`} className={styles.card}>
+              <h3>{conversation.character}</h3>
+              <p>has {conversation.number_of_lines_together} lines together</p>
             </a>
-            ))
-          }
+          ))}
         </div>
+
       </main>
     </div >
   );
