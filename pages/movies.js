@@ -31,15 +31,7 @@ export default function Movies() {
     const json = await res.json();
     setMovies(json);
   }
-  /*
-    async function handleSubmit() {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/movies/?name=${searchString}`, {
-        method: 'GET'
-      });
-      const json = await res.json();
-      setMovies(json);
-    }
-  */
+
   return (
     <div className={styles.container}>
       <Head>
