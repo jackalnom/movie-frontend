@@ -14,6 +14,8 @@ export default function Home() {
           Welcome to Movie Dialoger!
         </h1>
 
+        <img src="/moviedblogo.png" alt="Movie Dialoger Logo"  />
+
         <div className={styles.grid}>
           <a href="/movies" className={styles.card}>
             <h3>Movies &rarr;</h3>
