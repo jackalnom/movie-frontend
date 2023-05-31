@@ -64,7 +64,8 @@ export default function Movies() {
             movies.map((movie) => (
               <a href={`/movies/${movie.movie_id}`} className={styles.card}>
                 <h3> {movie.movie_title} </h3>
-                <p>Released {movie.year} Rating: {movie.imdb_rating} based on {movie.imdb_votes} votes.</p>
+                <p>Released <b>{movie.year}</b></p>
+                <p className={styles.rating} data-tooltip={`Based on ${movie.imdb_votes} votes`}>Rating <b>{movie.imdb_rating}</b></p>
               </a>
             ))}
         </div>

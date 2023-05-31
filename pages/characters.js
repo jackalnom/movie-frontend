@@ -64,7 +64,7 @@ export default function Characters() {
             characters.map((character) => (
               <a href={`/characters/${character.character_id}`} className={styles.card}>
                 <h3> {character.character} </h3>
-                <p>Movie: {character.movie}</p><p>Number of lines: {character.number_of_lines}</p>
+                <p>Movie <b>{character.movie}</b></p><p>Number of lines <b>{character.number_of_lines}</b></p>
               </a>
 
             ))}

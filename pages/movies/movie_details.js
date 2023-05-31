@@ -38,7 +38,7 @@ export default function MovieDetail() {
             movie.top_characters.map((character) => (
               <a href={`/characters/${character.character_id}`} className={styles.card}>
               <h3> {character.character} </h3>
-              <p> has {character.num_lines} in the movie.</p>
+              <p>Lines <b>{character.num_lines}</b></p>
             </a>
             ))
           }

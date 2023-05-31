@@ -61,6 +61,30 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
+.rating {
+  position: relative;
+}
+
+.rating::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.rating:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
 .card:hover,
 .card:focus,
 .card:active {

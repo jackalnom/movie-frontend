@@ -37,7 +37,7 @@ export default function CharacterDetail() {
           {character.top_conversations.map((conversation) => (
             <a key={conversation.character_id} href={`/characters/${conversation.character_id}`} className={styles.card}>
               <h3>{conversation.character}</h3>
-              <p>has {conversation.number_of_lines_together} lines together</p>
+              <p>Lines together <b>{conversation.number_of_lines_together}</b></p>
             </a>
           ))}
         </div>
