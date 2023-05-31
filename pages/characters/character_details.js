@@ -32,7 +32,7 @@ export default function CharacterDetail() {
       </Head>
       <main>
         <h1>{character.character}</h1>
-
+        <p><h2>interacted with these characters in {character.movie}:</h2></p>
         <div className={styles.grid}>
           {character.top_conversations.map((conversation) => (
             <a key={conversation.character_id} href={`/characters/${conversation.character_id}`} className={styles.card}>
